@@ -8,9 +8,8 @@ from telegram.ext import (filters,
                           ContextTypes)
 
 
-from config import token
+from config import token, pingvin_chat_id
 
-pingvin_chat_id = '-4074138486'
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -29,8 +28,9 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id,
-                                   text="Sorry, I didn't understand that command.")
+    await context.bot.send_message(
+        chat_id=update.effective_chat.id,
+        text="Sorry, I didn't understand that command.")
 
 
 if __name__ == '__main__':
