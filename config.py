@@ -4,6 +4,4 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-token = os.getenv('token')    
-
-
+token = os.getenv('token')
